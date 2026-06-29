@@ -1,0 +1,153 @@
+<DOCTYPY HTML>
+    <html lang="UK">
+        <head>
+            <meta charset="UFT-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>
+                Elegant Note
+            </title>
+            <link rel="stylesheet" href="./style.css">
+        </head>
+
+        <body>
+            <div class="container">
+                <header class="header">
+                    <h1>Elegant Note</h1>
+                    <p>Store your thoughts and ideas in style</p>
+                </header>
+
+                <div class="controls">
+                    <div class="controls-conttainer">
+                        <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search note..."
+                        class="search-input"
+                        />
+                        <div class="filter-group">
+                            <select id="filterSelect" class="filter-select">
+                                <option value="all">All notes</option>
+                                <option value="work">Work</option>
+                                <option value="personal">Personal</option>
+                                <option value="idea">Ideas</option>
+                                <option value="reminders">Reminders</option>
+                            </select>
+                            <button id="addNoteBtn" class="add-btn">
+                                <i class="fas fa-plus">Add</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="notescontainer" class="notes-grid">
+                    <!--Notes will be added here dynamically-->
+                </div>
+
+                <div id="emptyState" class="empty-state">
+                    <i class="fas fa -notes-medical"></i>
+                    <h3>No notes</h3>
+                    <p>Add your first note by clicking the "Add" button</p>
+                </div>
+
+                <div id="addNoteModel" class="model-overlay">
+                    <div class="model">
+                        <div class="modal-header">
+                            <h3 class="model-title">New Note</h3>
+                            <button id="closemodelBtn" class="model-close">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <form id="noteForm" class="model-body">
+                            <div class="form-group">
+                                <label for="noteTitle" class="form-label">Title</label>
+                                <input type="text" id="noteTitle" class="form-input" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="notecontent" class="form-label"> Content </label>
+                                <textarea
+                                id="noteContent"
+                                class="form-input form-textarea"
+                                required
+                                ></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Tags</label>
+                                <div class="tags-container">
+                                    <label class="tag-option">
+                                        <input
+                                        type="radio"
+                                        name="noteTag"
+                                        value="work"
+                                        class="tag-radio"
+                                        />
+                                        <span class="tag-label tag-work">
+                                            <i class="fas fa-briefcase">Work</i>
+                                        </span>
+                                    </label>
+                                    <label class="tag-option">
+                                        <input
+                                        type="radio"
+                                        name="noteTag"
+                                        value="personal"
+                                        class="tag-radio"
+                                        />
+                                        <span class="tag-label tag-personal">
+                                            <i class="fas fa-user">Personal</i>
+                                        </span>
+                                    </label>
+                                    <label class="tag-option">
+                                        <input
+                                        type="radio"
+                                        name="noteTag"
+                                        value="ideas"
+                                        class="tag-radio"
+                                        checked
+                                        />
+                                        <span class="tag-label">
+                                            <i class="fas fa-lightbulb">Ideas</i>
+                                        </span>
+                                    </label>
+                                    <label class="tag-option">
+                                        <input 
+                                        type="radio"
+                                        name="noteTag"
+                                        value="reminders"
+                                        class="tag-radio"
+                                    />
+                                    <span class="tag-label tag-reminders">
+                                        <i class="fas fa-bell">Reminders</i>
+                                    </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="submit-btn">Save Note</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="confirmModel" class="model-overlay">
+                    <div class="model confirmation-model">
+                        <div class="model-body">
+                            <p class="confirmation-text">
+                                Are you sure you want to delete this note?
+                            </p>
+                            <div class="confirmtion-button">
+                                <button id="canceldeleteBtn" class="confirmation-btn cancel-btn">
+                                    Cacel
+                                </button>
+                                <button
+                                id="confirmdeleteBtn"
+                                class="contirmation-btn confirm-btn"
+                                >
+                                Delete
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="./intex.js"></script>
+        </body>
+    </html>
